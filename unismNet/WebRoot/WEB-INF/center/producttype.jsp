@@ -443,6 +443,7 @@
 		href="javascript:void(0)">添加</a> <a class="easyui-linkbutton"
 		iconCls="icon-cancel" href="javascript:void(0)" onclick="close1()">取消</a>
 </div>
+<!-- add comments by he -->
 <div id="edit" class="easyui-window" title="修改"
 	style="padding: 10px;width: 300;height: 200;" iconCls="icon-edit"
 	closed="true" maximizable="false" minimizable="false"
