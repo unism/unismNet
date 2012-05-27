@@ -45,7 +45,7 @@ public class ProductTypeAction extends ActionSupport implements
 	}
 
 	public String list() {
-		int maxResult = 20;
+		int maxResult = 15;
 		if (productTypeVO.getRows() != null) {
 			maxResult = Integer.valueOf(productTypeVO.getRows().get(0)
 					.toString());
@@ -67,7 +67,7 @@ public class ProductTypeAction extends ActionSupport implements
 				ProductType.class, firstIndex, maxResult,whereJpql.toString(),params.toArray(), orderBy);
 		Map<String, Object> jsonMap = new HashMap<String, Object>();// 定义map
 		
-		PageView<ProductType> pageView = new PageView<ProductType>(20,
+		PageView<ProductType> pageView = new PageView<ProductType>(15,
 				productTypeVO.getPage());
 		pageView.setQueryResult(qr);
 		productTypeVO.setTotal((int)qr.getTotalRecord());

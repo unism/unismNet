@@ -26,6 +26,7 @@
 							idField : '编号',
 							pagination : true,
 							rownumbers : true,
+							fitColumns:true,
 							frozenColumns : [ [ {
 								field : 'ck',
 								checkbox : true
@@ -164,7 +165,7 @@
 						});
 		var p = $('#pro').datagrid('getPager');
 		$(p).pagination({
-			pageSize : 20,//每页显示的记录条数，默认为10  
+			pageSize : 15,//每页显示的记录条数，默认为10  
 			pageList : [ 5, 10, 15, 20, 25, 30 ],//可以设置每页记录条数的列表  
 			beforePageText : '第',//页数文本框前显示的汉字  
 			afterPageText : "共{pages}页",
