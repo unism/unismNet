@@ -15,7 +15,6 @@
 						{
 							title : '',
 							iconCls : 'icon-save',
-							height : 620,
 							nowrap : false,
 							striped : true,
 							collapsible : true,
@@ -73,7 +72,7 @@
 											{
 												field : 'childType',
 												title : '创建下级类别',
-												width : 100,
+												width : 120,
 												rowspan : 2,
 												sortable : true,
 												sorter : function(a, b) {
