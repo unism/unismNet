@@ -25,6 +25,7 @@
 							idField : '编号',
 							pagination : true,
 							rownumbers : true,
+							fitColumns:true,
 							frozenColumns : [ [ {
 								field : 'ck',
 								checkbox : true
