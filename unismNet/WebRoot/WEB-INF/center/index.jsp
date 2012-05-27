@@ -46,7 +46,7 @@ body {
 	</div>
 
 	<div region="east" split="true" title=""
-		style="width:200px;padding1:1px;overflow:hidden;">
+		style="width:280px;padding1:1px;overflow:hidden;">
 		<div class="easyui-accordion" fit="true" border="false">
 			<div title="用户管理" style="padding:10px;overflow:auto;">
 				<ul class="easyui-tree" url="${ctx}/control/center/user.action"></ul>

@@ -1,1 +1,15 @@
-test.he
+/unismNet/src/application.properties
+/unismNet/.settings
+/unismNet/.classpath
+/unismNet/.mymetadata
+/unismNet/.project
+/unismNet/WebRoot/WEB-INF/classes
+/unismNet/WebRoot/WEB-INF/lib
+/unismNet/build
+/unismNet/build.xml
+/build
+/build.xml
+*.bak
+*-bak
+*.swap
+*~

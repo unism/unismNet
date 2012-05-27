@@ -37,7 +37,7 @@ public class ProductTypeAction extends ActionSupport implements
 	public ProductTypeVO getModel() {
 		return productTypeVO;
 	}
-	
+
 	@Override
 	public String execute() throws Exception {
 		// TODO Auto-generated method stub
@@ -45,7 +45,7 @@ public class ProductTypeAction extends ActionSupport implements
 	}
 
 	public String list() {
-		int maxResult = 15;
+		int maxResult = 20;
 		if (productTypeVO.getRows() != null) {
 			maxResult = Integer.valueOf(productTypeVO.getRows().get(0)
 					.toString());
@@ -67,7 +67,7 @@ public class ProductTypeAction extends ActionSupport implements
 				ProductType.class, firstIndex, maxResult,whereJpql.toString(),params.toArray(), orderBy);
 		Map<String, Object> jsonMap = new HashMap<String, Object>();// 定义map
 		
-		PageView<ProductType> pageView = new PageView<ProductType>(15,
+		PageView<ProductType> pageView = new PageView<ProductType>(20,
 				productTypeVO.getPage());
 		pageView.setQueryResult(qr);
 		productTypeVO.setTotal((int)qr.getTotalRecord());

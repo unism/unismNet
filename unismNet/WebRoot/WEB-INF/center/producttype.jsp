@@ -15,6 +15,7 @@
 						{
 							title : '',
 							iconCls : 'icon-save',
+							height : 620,
 							nowrap : false,
 							striped : true,
 							collapsible : true,
@@ -25,7 +26,6 @@
 							idField : '编号',
 							pagination : true,
 							rownumbers : true,
-							fitColumns:true,
 							frozenColumns : [ [ {
 								field : 'ck',
 								checkbox : true
@@ -164,7 +164,7 @@
 						});
 		var p = $('#pro').datagrid('getPager');
 		$(p).pagination({
-			pageSize : 15,//每页显示的记录条数，默认为10  
+			pageSize : 20,//每页显示的记录条数，默认为10  
 			pageList : [ 5, 10, 15, 20, 25, 30 ],//可以设置每页记录条数的列表  
 			beforePageText : '第',//页数文本框前显示的汉字  
 			afterPageText : "共{pages}页",
@@ -215,7 +215,7 @@
 		if (row) {
 			$.ajax({
 				type : "GET",
-				url : "/unismNet/control/product/pro_getproductbyid.action",
+				url : "/unismNet/control/product/pro_getproductbyid.action",///unismNet/control/center/datagrid.action
 				data : "typeid=" + row.typeid,
 				dataType : "json",
 				contentType : "application/json; charset=utf-8",
