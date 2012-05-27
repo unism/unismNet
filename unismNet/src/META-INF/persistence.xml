@@ -1,0 +1,37 @@
+<persistence xmlns="http://java.sun.com/xml/ns/persistence"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/persistence http://java.sun.com/xml/ns/persistence/persistence_1_0.xsd"
+	version="1.0">
+	<persistence-unit name="unism" transaction-type="RESOURCE_LOCAL">
+		<provider>org.hibernate.ejb.HibernatePersistence</provider>
+		<properties>
+			<!-- <property name="hibernate.dialect" value="org.hibernate.dialect.SQLServerDialect" />
+			<property name="hibernate.dialec" value="org.hibernate.dialect.MySQLInnoDBDialect" />
+			<property name="hibernate.dialec" value="org.hibernate.dialect.HSQLDialect" />-->
+			<!-- <property name="hibernate.cache.provider_class" value="net.sf.hibernate.cache.EhCacheProvider" />-->
+			<!--<property name="hibernate.transaction.factory_class" value="net.sf.hibernate.transaction.JDBCTransactionFactory" />-->
+			
+			<!-- 
+			<property name="hibernate.cache.provider_class" value="org.hibernate.cache.EhCacheProvider" />
+			<property name="hibernate.transaction.factory_class" value="org.hibernate.transaction.JDBCTransactionFactory" />
+			<property name="hibernate.transaction.auto_close_session" value="true" />
+			<property name="hibernate.connection.autocommit" value="false" />
+			<property name="hibernate.connection.isolation" value="2" />
+			<property name="hibernate.default_batch_fetch_size" value="16" />
+			<property name="hibernate.query.factory_class" value="org.hibernate.hql.classic.ClassicQueryTranslatorFactory" />
+			<property name="hibernate.cache.use_query_cache" value="true" />
+			<property name="hibernate.connection.release_mode" value="after_transaction" />
+			<property name="hibernate.cache.region_prefix" value="hibernate.cache.test" />
+			<property name="hibernate.default_schema" value="test" />
+			 -->
+			 
+			<property name="hibernate.dialect" value="org.hibernate.dialect.MySQL5Dialect" />
+			<property name="hibernate.hbm2ddl.auto" value="update" />
+			<property name="hibernate.max_fetch_depth" value="3" />
+			<property name="hibernate.jdbc.fetch_size" value="18" />
+			<property name="hibernate.jdbc.batch_size" value="10" />
+			<property name="hibernate.show_sql" value="false" />
+			<property name="hibernate.format_sql" value="false" />
+		</properties>
+	</persistence-unit>
+</persistence>

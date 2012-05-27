@@ -1,0 +1,18 @@
+@CHARSET "UTF-8";
+
+.panel-body {
+	background: #f0f0f0;
+}
+
+.panel-header {
+	background: #fff url('../images/panel_header_bg.gif') no-repeat top
+		right;
+}
+
+.panel-tool-collapse {
+	background: url('../images/arrow_up.gif') no-repeat 0px -3px;
+}
+
+.panel-tool-expand {
+	background: url('../images/arrow_down.gif') no-repeat 0px -3px;
+}

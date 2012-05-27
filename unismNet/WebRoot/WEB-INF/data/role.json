@@ -1,0 +1,18 @@
+[{
+	"text":"角色列表",
+	"state":"open",
+	
+	"children":[{
+		"id":"1",
+		"text":"Administrators"
+	},{
+		"id":"2",
+		"text":"RoleManagers"
+	},{
+		"id":"3",
+		"text":"项目管理员"
+	},{
+		"id":"4",
+		"text":"普通用户"
+	}]
+}]

@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "http://struts.apache.org/dtds/struts-2.0.dtd">
+
+<struts>
+	
+	<!-- 时候可以动态加载方法，默认为true -->
+	<constant name="struts.enable.DynamicMethodInvocation" value="true" />
+	<constant name="struts.objectFactory.spring.autoWire" value="name|type|auto|constructor" />
+	<!--struts2有一个对象工厂，作用，创建对象工厂 来创建Action，spring替换struts2的对象创建工厂方法，使用spring来创建Action，该工厂为bean工厂, -->
+	<constant name="struts.objectFactory" value="spring" />
+	
+	<package name="scene" namespace="/control/scene" extends="json-default">
+
+		<action name="execute" class="sceneAction" method="list">
+			<result name="SUCCESS" type="json">/WEB-INF/center/scene.jsp</result>
+		</action>
+
+		<action name="scene_*" class="sceneAction" method="{1}">
+			<result name="SUCCESS" type="json">
+				<param name="root">json</param>
+			</result>
+			<result name="SUCCESS">/WEB-INF/center/scene.jsp</result>
+		</action>
+	</package>
+	
+	<package name="product" namespace="/control/product" extends="json-default">
+		<action name="list" class="productTypeAction" method="list">
+			<result type="json">
+				<!-- 这里指定将被Struts2序列化的属性，该属性在action中必须有对应的getter方法 -->  
+                <!-- 默认将会序列所有有返回值的getter方法的值，而无论该方法是否有对应属性 -->
+				<param name="root">result</param> 
+				<!-- 指定是否序列化空的属性 -->
+				<param name="excludeNullProperties">false</param>
+				<!-- 这里指定将序列化dataMap中的那些属性 
+                <param name="includeProperties">
+                    
+                </param>
+                --> 
+                <!-- 指定内容类型，默认为application/json，IE浏览器会提示下载 -->  
+                <param name="contentType">text/html</param>  
+                <!-- 这里指定将要从dataMap中排除那些属性，这些排除的属性将不被序列化，一般不与上边的参数配置同时出现  
+                <param name="excludeProperties">  
+                    SUCCESS
+                </param>
+                -->
+			</result>
+		</action>
+		<action name="pro_*" class="productTypeAction" method="{1}">
+			<result type="json">
+				<!-- 这里指定将被Struts2序列化的属性，该属性在action中必须有对应的getter方法 -->  
+                <!-- 默认将会序列所有有返回值的getter方法的值，而无论该方法是否有对应属性 -->
+				<param name="root">data</param>
+				<!-- 指定是否序列化空的属性 -->
+				<param name="excludeNullProperties">false</param>
+				<!-- 这里指定将序列化dataMap中的那些属性 
+                <param name="includeProperties">
+                    
+                </param>
+                --> 
+                <!-- 指定内容类型，默认为application/json，IE浏览器会提示下载 -->  
+                <param name="contentType">text/html</param>  
+                <!-- 这里指定将要从dataMap中排除那些属性，这些排除的属性将不被序列化，一般不与上边的参数配置同时出现  
+                <param name="excludeProperties">  
+                    SUCCESS
+                </param>
+                -->
+			</result>
+		</action>
+		<action name="product_*" class="productTypeAction" method="{1}">
+			<result name="success">/WEB-INF/center/producttype.jsp</result>
+		</action>
+	</package>
+	
+	<package name="tree" namespace="/control/center" extends="struts-default">
+		<action name="main" class="com.unism.action.center.TreeAction" method="execute">
+			<result >/WEB-INF/center/index.jsp</result>
+		</action>
+		<action name="json" class="com.unism.action.center.TreeAction" method="json">
+			<result name="json">/WEB-INF/data/tree_data.json</result>
+		</action>
+		<action name="user" class="com.unism.action.center.TreeAction" method="user">
+			<result name="user">/WEB-INF/data/user.json</result>
+		</action>
+		<action name="role" class="com.unism.action.center.TreeAction" method="role">
+			<result name="role">/WEB-INF/data/role.json</result>
+		</action>
+		<action name="top" class="com.unism.action.center.TreeAction" method="top">
+			<result name="top">/WEB-INF/center/index.jsp</result>
+		</action>
+		<action name="org" class="com.unism.action.center.TreeAction" method="org">
+			<result name="org">/WEB-INF/data/org.json</result>
+		</action>
+		<action name="datagrid" class="com.unism.action.center.TreeAction" method="datagrid">
+			<result name="datagrid">/WEB-INF/data/treegrid_data.json</result>
+		</action>
+		<action name="grid" class="com.unism.action.center.TreeAction" method="grid">
+			<result name="grid">/WEB-INF/center/datagrid.jsp</result>
+		</action>
+		<!-- 请求转发，默认class="ActionSupport" -->
+		<action name="addUI">
+			<result>/WEB-INF/center/employeeAdd.jsp</result>
+		</action>
+	</package>
+	<!-- 获得请求的url不存在，然后根据包一级一级向上查找，如果都不存在，会在默认包中查找，如果没有，报错。 -->
+	<package name="default" extends="struts-default">
+		
+	</package>
+
+</struts>
