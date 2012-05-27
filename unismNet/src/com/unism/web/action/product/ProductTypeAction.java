@@ -37,7 +37,7 @@ public class ProductTypeAction extends ActionSupport implements
 	public ProductTypeVO getModel() {
 		return productTypeVO;
 	}
-
+	
 	@Override
 	public String execute() throws Exception {
 		// TODO Auto-generated method stub
